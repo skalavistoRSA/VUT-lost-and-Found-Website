@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" id="description" content="Submit a found item to the VUT Lost and Found Portal. Help reunite students with their belongings.">
+  <meta name="keywords" content="VUT, submit found item, lost and found, campus, report">
+  <meta name="author" content="VUT Lost and Found Team">
+  <title>Report a Found Item – VUT Lost &amp; Found</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .submit-hero {
+      background: linear-gradient(160deg, #001f5c 0%, #003087 60%, #004aad 100%);
+      text-align: center;
+      padding: 60px 28px 48px;
+      color: #ffffff;
+      border-bottom: 4px solid #c9a84c;
+    }
+    .submit-hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 900;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .submit-hero p {
+      font-size: 1rem;
+      color: #b8caec;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="top-bar">
+    <span>Vaal University of Technology &mdash; Vanderbijlpark, South Africa</span>
+    <span>
+      <span>Online Claiming Portal</span>
+      &nbsp;|&nbsp;
+      <a href="https://www.vut.ac.za" target="_blank" rel="noopener">vut.ac.za &#8599;</a>
+    </span>
+  </div>
+
+  
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-area">
+        <img src="images/vut-logo.jpg" alt="Vaal University of Technology Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="site-name">VUT Lost &amp; Found Portal</span>
+          <span class="site-sub">Vaal University of Technology</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="submit.html" class="active">Report Found Item</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+  <section class="submit-hero">
+    
+    <div class="pulse-anim" title="Submit a found item">&#128230;</div>
+    <h1>Report a Found Item</h1>
+    <p>Complete the form below. Your submission helps reunite a fellow VUT student or staff member with their belongings.</p>
+  </section>
+
+  
+  <main>
+
+    <div class="alert alert-info">
+      <strong>Please note:</strong> Items submitted here are reviewed and listed on the portal within 24 hours.
+      Kindly hand the physical item in to the <strong>Student Services Office</strong> (Main Admin Building, Ground Floor) or the nearest faculty reception desk.
+    </div>
+
+    <div class="success-box" id="successBox">
+      <div style="font-size:2.5rem; margin-bottom:10px;">&#10003;</div>
+      <h3>Submission Received &mdash; Thank You!</h3>
+      <p>Your found item has been logged and will appear on the listings page within 24 hours.<br>
+         <a href="index.html" style="color:#155724; font-weight:700;">Return to listings &rarr;</a></p>
+    </div>
+
+    
+    <div class="form-card">
+      <h2 class="section-title" style="margin-bottom:4px;">Item Submission Form</h2>
+      <p class="section-sub">Fields marked <span class="required">*</span> are required.</p>
+
+      <form id="lostItemForm" id="submitForm" novalidate>
+
+        <div class="form-group">
+          <label for="itemName">Item Name <span class="required">*</span></label>
+          <input type="text" id="itemName" name="itemName" id="itemName" placeholder="e.g. Samsung Galaxy A54, Black Hoodie, Student Card..." required>
+          <div class="form-hint">Be as specific as possible to help the owner identify it.</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="category">Category <span class="required">*</span></label>
+            <select id="category" name="category" id="category" required>
+              <option value="" disabled selected>Select category...</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Stationery">Stationery</option>
+              <option value="Accessories">Accessories</option>
+              <option value="Documents">Documents / Cards</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Where Found <span class="required">*</span></label>
+            <select id="location" name="location" id="location" required>
+              <option value="" disabled selected>Select location...</option>
+              <option value="Library">Library</option>
+              <option value="Cafeteria">Cafeteria / Canteen</option>
+              <option value="Lecture Block A">Lecture Block A</option>
+              <option value="Lecture Block B">Lecture Block B</option>
+              <option value="Lecture Block C">Lecture Block C</option>
+              <option value="Engineering Building">Engineering Building</option>
+              <option value="Science Building">Science Building</option>
+              <option value="Student Centre">Student Centre</option>
+              <option value="Parking Area">Parking Area</option>
+              <option value="Sports Grounds">Sports Grounds</option>
+              <option value="Other">Other (specify in description)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dateFound">Date Found <span class="required">*</span></label>
+            <input type="date" id="dateFound" name="dateFound" required>
+          </div>
+          <div class="form-group">
+            <label for="timeFound">Approximate Time</label>
+            <input type="time" id="timeFound" name="timeFound">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Item Description <span class="required">*</span></label>
+          <textarea id="description" name="description" id="description" placeholder="Describe the item in detail — colour, brand, distinguishing marks, condition, any visible ID..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="finderName">Your Full Name <span class="required">*</span></label>
+          <input type="text" id="finderName" name="finderName" placeholder="As per your student card" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="finderEmail">VUT Student Email <span class="required">*</span></label>
+            <input type="email" id="finderEmail" name="finderEmail" placeholder="yourname@vut.ac.za" required>
+          </div>
+          <div class="form-group">
+            <label for="finderPhone">Contact Number</label>
+            <input type="tel" id="finderPhone" name="finderPhone" placeholder="e.g. 072 123 4567">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Item Currently In Possession Of <span class="required">*</span></label>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:8px;">
+            <label class="form-check">
+              <input type="radio" name="custody" value="Handed to Student Services" required> Student Services Office
+            </label>
+            <label class="form-check">
+              <input type="radio" name="custody" value="Keeping until claimed"> Keeping until claimed
+            </label>
+            <label class="form-check">
+              <input type="radio" name="custody" value="Faculty Reception"> Faculty Reception
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-check">
+            <input type="checkbox" id="consent" name="consent" required>
+            I confirm that the information provided is accurate and I consent to my name being displayed on the public listing.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; padding:15px; font-size:0.95rem; margin-top:8px;">
+          Submit Found Item &rarr;
+        </button>
+
+        <p style="margin-top:16px; font-size:0.82rem; color:var(--muted); text-align:center;">
+          For assistance, email
+          <a href="mailto:lostandfound@vut.ac.za" style="color:var(--blue);">lostandfound@vut.ac.za</a>
+          or visit the <a href="about.html" style="color:var(--blue);">About page</a>.
+        </p>
+
+      </form>
+    </div>
+
+  </main>
+
+  
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">VUT <span>Lost &amp; Found</span></div>
+        <div class="footer-tagline">Inspiring thought. Shaping talent.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="submit.html">Submit Item</a>
+        <a href="about.html">About</a>
+        <a href="mailto:lostandfound@vut.ac.za">&#9993; Email Us</a>
+        <a href="https://www.vut.ac.za" target="_blank" rel="noopener">VUT Website &#8599;</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 VUT Lost &amp; Found Portal &mdash; Vaal University of Technology, Vanderbijlpark, 1911.
+        Developed for Web Management 3.1 &mdash; Faculty of Applied and Computer Science.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('submitForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!e.target.checkValidity()) { e.target.reportValidity(); return; }
+      e.target.style.display = 'none';
+      document.getElementById('successBox').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+    <script src="js/submit.js"></script>
+</body>
+</html>
