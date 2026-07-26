@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VUT Lost & Found Portal – Find or report lost items on the Vaal University of Technology campus.">
+  <meta name="keywords" content="VUT, Vaal University of Technology, lost and found, campus, students, found items">
+  <meta name="author" content="VUT Lost and Found Team">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="VUT Lost & Found Portal">
+  <meta property="og:description" content="Reuniting students with their belongings on VUT campus.">
+  <title>VUT Lost &amp; Found Portal – Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR -->
+  <div class="top-bar">
+    <span>Vaal University of Technology &mdash; Vanderbijlpark, South Africa</span>
+    <span>
+      <span>Digital Claiming System Enabled</span>
+      &nbsp;|&nbsp;
+      <a href="https://www.vut.ac.za" target="_blank" rel="noopener">vut.ac.za ↗</a>
+    </span>
+  </div>
+
+  <!-- BANNER / HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-area">
+        <img src="images/vut-logo.jpg" alt="Vaal University of Technology Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="site-name">VUT Lost &amp; Found Portal</span>
+          <span class="site-sub">Vaal University of Technology</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="submit.html">Report Found Item</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Official VUT Digital Lost &amp; Found Portal</div>
+    <h1>Lost Something on <span>Campus?</span></h1>
+    <p>Browse recently found items around VUT campus and claim them instantly online.taff. If you have found something, help your community — submit a listing today.</p>
+    <div class="hero-actions">
+      <a href="submit.html" class="btn btn-primary">Report a Found Item</a>
+      <a href="#listings" class="btn btn-outline">Browse Listings &darr;</a>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-num" id="stat-total">24</div>
+        <div class="stat-label">Items Listed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-unclaimed">17</div>
+        <div class="stat-label">Awaiting Collection</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-claimed">7</div>
+        <div class="stat-label">Successfully Returned</div>
+      </div>
+    </div>
+
+    <!-- Listings Section -->
+    <section id="listings">
+      <h2 class="section-title">Found Items Listings</h2>
+      <p class="section-sub">Use the search and filters below to locate your missing item. Click <strong>Claim</strong> to contact the finder by email.</p>
+
+      <!-- Search + Filter -->
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Search items, e.g. wallet, laptop, student card..." oninput="filterTable()">
+        <select id="categoryFilter" onchange="filterTable()">
+          <option value="">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Stationery">Stationery</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Documents">Documents</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="statusFilter" onchange="filterTable()">
+          <option value="">All Statuses</option>
+          <option value="Unclaimed">Unclaimed</option>
+          <option value="Claimed">Claimed</option>
+        </select>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrap">
+        <table id="itemsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item Description</th>
+              <th>Category</th>
+              <th>Location Found</th>
+              <th>Date Found</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty-state" style="display:none;">
+          <div class="empty-icon">&#128235;</div>
+          <p>No items match your search. Please try different keywords or filters.</p>
+        </div>
+      </div>
+
+      <p class="mt-16" style="font-size:0.84rem; color:var(--muted);">
+        Cannot find your item?
+        <a href="mailto:lostandfound@vut.ac.za" style="color:var(--blue); font-weight:600;">Email lostandfound@vut.ac.za</a>
+        or visit the Student Services Office in the Main Administration Building.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">VUT <span>Lost &amp; Found</span></div>
+        <div class="footer-tagline">Inspiring thought. Shaping talent.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="submit.html">Submit Item</a>
+        <a href="about.html">About</a>
+        <a href="mailto:lostandfound@vut.ac.za">&#9993; Email Us</a>
+        <a href="https://www.vut.ac.za" target="_blank" rel="noopener">VUT Website &#8599;</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 VUT Lost &amp; Found Portal &mdash; Vaal University of Technology, Vanderbijlpark, 1911.
+        Developed for Web Management 3.1 &mdash; Faculty of Applied and Computer Science.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>renderTable(items);</script>
+
+</body>
+</html>
